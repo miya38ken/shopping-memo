@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0,
+                   maximum-scale=1.0, user-scalable=no">
+
+    <meta name="theme-color" content="#ffffff">
+
+    <title>買い物メモ</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+
+    <meta name="apple-mobile-web-app-capable"
+        content="yes">
+
+    <meta name="apple-mobile-web-app-status-bar-style"
+        content="default">
+
+    <meta name="apple-mobile-web-app-title"
+        content="買い物メモ">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- ========================= -->
+    <!-- ヘッダー -->
+    <!-- ========================= -->
+
+    <header class="header">
+
+        <h1>買い物メモ</h1>
+
+    </header>
+
+
+    <!-- ========================= -->
+    <!-- メイン -->
+    <!-- ========================= -->
+
+    <main class="main">
+
+        <!-- ========================= -->
+        <!-- 買うものページ -->
+        <!-- ========================= -->
+
+        <section id="shoppingPage" class="page active">
+
+            <div class="page-header">
+
+                <h2>今回買うもの</h2>
+
+                <span id="shoppingCount"
+                      class="count">
+                    0個
+                </span>
+
+            </div>
+
+            <div id="shoppingList"></div>
+
+            <button
+                id="shoppingModeButton"
+                class="main-button">
+                🛍️ 買い物を始める
+            </button>
+
+        </section>
+
+
+        <!-- ========================= -->
+        <!-- 商品リスト -->
+        <!-- ========================= -->
+
+        <section id="productsPage" class="page">
+
+            <div class="page-header">
+
+                <h2>商品リスト</h2>
+
+            </div>
+
+
+            <div class="search-box">
+
+                <span>🔍</span>
+
+                <input
+                    id="searchInput"
+                    type="text"
+                    placeholder="商品を検索">
+
+            </div>
+
+
+            <button
+                id="addProductButton"
+                class="main-button">
+                ＋ 商品を登録
+            </button>
+
+
+            <div id="productList"></div>
+
+        </section>
+
+
+        <!-- ========================= -->
+        <!-- 履歴ページ -->
+        <!-- ========================= -->
+
+        <section id="historyPage" class="page">
+
+            <div class="page-header">
+
+                <h2>購入履歴</h2>
+
+            </div>
+
+            <div id="historyList"></div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ========================= -->
+    <!-- 下部ナビゲーション -->
+    <!-- ========================= -->
+
+    <nav class="bottom-nav">
+
+        <button
+            class="nav-button active"
+            data-page="shopping">
+
+            <span>🛒</span>
+            <small>買うもの</small>
+
+        </button>
+
+
+        <button
+            class="nav-button"
+            data-page="products">
+
+            <span>📦</span>
+            <small>商品</small>
+
+        </button>
+
+
+        <button
+            class="nav-button"
+            data-page="history">
+
+            <span>📜</span>
+            <small>履歴</small>
+
+        </button>
+
+    </nav>
+
+</div>
+
+
+<!-- ================================================== -->
+<!-- 商品登録・編集モーダル -->
+<!-- ================================================== -->
+
+<div id="productModal" class="modal">
+
+    <div class="modal-content">
+
+        <h2 id="modalTitle">
+            商品を登録
+        </h2>
+
+
+        <label>
+            商品名
+        </label>
+
+        <input
+            id="productNameInput"
+            type="text"
+            placeholder="例：洗濯洗剤">
+
+
+        <label>
+            カテゴリ
+        </label>
+
+        <select id="categoryInput">
+
+            <option value="日用品">
+                🧴 日用品
+            </option>
+
+            <option value="食品">
+                🍚 食品
+            </option>
+
+            <option value="飲料">
+                🥤 飲料
+            </option>
+
+            <option value="衛生・美容">
+                🧼 衛生・美容
+            </option>
+
+            <option value="その他">
+                📦 その他
+            </option>
+
+        </select>
+
+
+        <div class="modal-buttons">
+
+            <button
+                id="cancelProductButton"
+                class="cancel-button">
+
+                キャンセル
+
+            </button>
+
+
+            <button
+                id="saveProductButton"
+                class="save-button">
+
+                保存
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================================================== -->
+<!-- 商品詳細モーダル -->
+<!-- ================================================== -->
+
+<div id="detailModal" class="modal">
+
+    <div class="modal-content">
+
+        <h2 id="detailTitle">
+            商品詳細
+        </h2>
+
+        <div id="detailContent"></div>
+
+        <button
+            id="closeDetailButton"
+            class="main-button">
+
+            閉じる
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<script src="app.js"></script>
+
+</body>
+</html>

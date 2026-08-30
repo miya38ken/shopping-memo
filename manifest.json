@@ -1,0 +1,11 @@
+{
+    "name": "買い物メモ",
+    "short_name": "買い物メモ",
+    "description": "日々の買い物と購入履歴を管理するアプリ",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#ffffff",
+    "orientation": "portrait",
+    "lang": "ja"
+}

@@ -1,0 +1,628 @@
+/* ==================================================
+   基本
+================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        "Hiragino Sans",
+        "Yu Gothic",
+        sans-serif;
+
+    background: #f4f4f4;
+
+    color: #333;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    min-height: 100vh;
+}
+
+
+/* ==================================================
+   アプリ本体
+================================================== */
+
+.app {
+    width: 100%;
+    max-width: 600px;
+
+    min-height: 100vh;
+
+    margin: 0 auto;
+
+    background: #fff;
+}
+
+
+/* ==================================================
+   ヘッダー
+================================================== */
+
+.header {
+    padding:
+        22px
+        20px
+        15px;
+
+    border-bottom: 1px solid #eee;
+}
+
+.header h1 {
+    margin: 0;
+
+    font-size: 26px;
+
+    font-weight: 700;
+}
+
+
+/* ==================================================
+   メイン
+================================================== */
+
+.main {
+    padding:
+        20px
+        20px
+        100px;
+}
+
+
+/* ==================================================
+   ページ
+================================================== */
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+
+/* ==================================================
+   ページヘッダー
+================================================== */
+
+.page-header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 18px;
+}
+
+.page-header h2 {
+    margin: 0;
+
+    font-size: 20px;
+}
+
+.count {
+    color: #888;
+
+    font-size: 14px;
+}
+
+
+/* ==================================================
+   検索
+================================================== */
+
+.search-box {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding:
+        12px
+        14px;
+
+    margin-bottom: 10px;
+
+    background: #f3f3f3;
+
+    border-radius: 12px;
+}
+
+.search-box input {
+    flex: 1;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    font-size: 16px;
+}
+
+
+/* ==================================================
+   メインボタン
+================================================== */
+
+.main-button {
+    width: 100%;
+
+    margin-top: 20px;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #333;
+
+    color: #fff;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    touch-action: manipulation;
+}
+
+.main-button:active {
+    transform: scale(0.98);
+}
+
+
+/* ==================================================
+   カテゴリ
+================================================== */
+
+.category {
+    margin-top: 25px;
+}
+
+.category-title {
+    margin-bottom: 5px;
+
+    padding-bottom: 7px;
+
+    border-bottom: 2px solid #eee;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+
+/* ==================================================
+   商品
+================================================== */
+
+.product-item {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    padding:
+        15px
+        5px;
+
+    border-bottom: 1px solid #eee;
+}
+
+.product-main {
+    flex: 1;
+
+    min-width: 0;
+}
+
+.product-name {
+    font-size: 16px;
+
+    font-weight: 500;
+}
+
+.product-info {
+    margin-top: 4px;
+
+    color: #999;
+
+    font-size: 12px;
+}
+
+
+/* ==================================================
+   商品ボタン
+================================================== */
+
+.button-group {
+    display: flex;
+
+    gap: 6px;
+}
+
+.small-button {
+    min-width: 50px;
+
+    padding:
+        9px
+        10px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #eee;
+
+    font-size: 13px;
+
+    cursor: pointer;
+}
+
+.small-button:active {
+    transform: scale(0.96);
+}
+
+
+/* ==================================================
+   買い物リスト
+================================================== */
+
+.shopping-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    min-height: 58px;
+
+    padding:
+        10px
+        5px;
+
+    border-bottom: 1px solid #eee;
+}
+
+.shopping-item input {
+    width: 24px;
+    height: 24px;
+
+    flex-shrink: 0;
+}
+
+.shopping-item label {
+    flex: 1;
+
+    font-size: 17px;
+}
+
+
+/* ==================================================
+   履歴
+================================================== */
+
+.history-product {
+    padding:
+        15px
+        5px;
+
+    border-bottom: 1px solid #eee;
+
+    cursor: pointer;
+}
+
+.history-product:active {
+    background: #f5f5f5;
+}
+
+.history-product-name {
+    font-size: 17px;
+
+    font-weight: 600;
+}
+
+.history-summary {
+    margin-top: 5px;
+
+    color: #888;
+
+    font-size: 13px;
+}
+
+.history-date-title {
+    margin-top: 25px;
+
+    margin-bottom: 5px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    color: #555;
+}
+
+
+/* ==================================================
+   空表示
+================================================== */
+
+.empty {
+    padding:
+        50px
+        10px;
+
+    text-align: center;
+
+    color: #999;
+
+    font-size: 14px;
+}
+
+
+/* ==================================================
+   下部ナビ
+================================================== */
+
+.bottom-nav {
+    position: fixed;
+
+    left: 50%;
+
+    bottom: 0;
+
+    transform: translateX(-50%);
+
+    width: 100%;
+
+    max-width: 600px;
+
+    height: 70px;
+
+    display: flex;
+
+    background: rgba(255,255,255,0.97);
+
+    border-top: 1px solid #ddd;
+
+    z-index: 100;
+}
+
+.nav-button {
+    flex: 1;
+
+    border: none;
+
+    background: transparent;
+
+    color: #999;
+
+    cursor: pointer;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 4px;
+
+    font-size: 12px;
+}
+
+.nav-button span {
+    font-size: 21px;
+}
+
+.nav-button small {
+    font-size: 11px;
+}
+
+.nav-button.active {
+    color: #333;
+
+    font-weight: 700;
+}
+
+
+/* ==================================================
+   モーダル
+================================================== */
+
+.modal {
+    position: fixed;
+
+    inset: 0;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    background:
+        rgba(0,0,0,0.4);
+
+    z-index: 200;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    width: 100%;
+
+    max-width: 420px;
+
+    padding: 25px;
+
+    background: #fff;
+
+    border-radius: 18px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+
+    margin-bottom: 20px;
+
+    font-size: 20px;
+}
+
+.modal-content label {
+    display: block;
+
+    margin-top: 15px;
+
+    margin-bottom: 6px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+.modal-content input,
+.modal-content select {
+    width: 100%;
+
+    padding: 14px;
+
+    border:
+        1px solid #ccc;
+
+    border-radius: 10px;
+
+    font-size: 16px;
+
+    background: #fff;
+}
+
+.modal-buttons {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 25px;
+}
+
+.modal-buttons button {
+    flex: 1;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+
+    cursor: pointer;
+}
+
+.cancel-button {
+    background: #eee;
+}
+
+.save-button {
+    background: #333;
+
+    color: white;
+}
+
+
+/* ==================================================
+   詳細
+================================================== */
+
+.detail-stat {
+    padding:
+        12px
+        0;
+
+    border-bottom: 1px solid #eee;
+}
+
+.detail-label {
+    color: #888;
+
+    font-size: 12px;
+}
+
+.detail-value {
+    margin-top: 4px;
+
+    font-size: 18px;
+
+    font-weight: 600;
+}
+
+.purchase-dates {
+    margin-top: 20px;
+}
+
+.purchase-dates h3 {
+    font-size: 15px;
+}
+
+.purchase-date {
+    padding: 7px 0;
+
+    color: #555;
+
+    font-size: 14px;
+}
+
+
+/* ==================================================
+   PC
+================================================== */
+
+@media (min-width: 601px) {
+
+    body {
+        padding: 20px 0;
+    }
+
+    .app {
+        min-height: calc(100vh - 40px);
+
+        border-radius: 16px;
+
+        overflow: hidden;
+    }
+
+    .bottom-nav {
+        bottom: 20px;
+
+        border-radius: 14px;
+
+        border: 1px solid #ddd;
+    }
+}
